@@ -14,7 +14,7 @@ if($checked=='true')
      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
    
-else if($country != '' && $country != null)
+else if(!empty($country))
    {
      $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%'");
      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
